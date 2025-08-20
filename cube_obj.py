@@ -23,7 +23,7 @@ class Cube:
             raise ValueError("save_strategy has to be a sequence of strings")
         
         if "faces" in save_strategy:
-            self.faces_factory = faces_factory or (lambda: np.arange(6).view(6, 1).repeat(8, axis=1))
+            self.faces_factory = faces_factory or (lambda: np.arange(6).reshape(6, 1).repeat(8, axis=1))
         if "cubies" in save_strategy:
             raise NotImplementedError("Cubies turns are not implemented yet")
             self.cubies_factory = cubies_factory or (lambda: np.arange(20*2).view(20, 2))
